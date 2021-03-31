@@ -16,16 +16,23 @@
       <p>Cerberus. Schiaparelli. Syrtis Major Hemisphere Enhanced. Valles Marineris Hemisphere Enhanced.</p>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
     </div>
-    <h2>The major satellites in mars:</h2>
-    <img src="{{ https://astrogeology.usgs.gov/cache/images/39d3266553462198bd2fbc4d18fbed17_cerberus_enhanced.tif_thumb.png}}" alt="Hemisphere">
-    <h3>Cerberus Hemisphere Enhanced</h3>
-    <img src="{{ https://astrogeology.usgs.gov/cache/images/08eac6e22c07fb1fe72223a79252de20_schiaparelli_enhanced.tif_thumb.png }}" alt="Hemisphere">
-    <h3>Schiaparelli Hemisphere Enhanced</h3>
-    <img src="{{ https://astrogeology.usgs.gov/cache/images/55a0a1e2796313fdeafb17c35925e8ac_syrtis_major_enhanced.tif_thumb.png}}" alt="Hemisphere">
-    <h3>Syrtis Major Hemisphere Enhanced. </h3>
-    <img src="{{ https://astrogeology.usgs.gov/cache/images/4e59980c1c57f89c680c0e1ccabbeff1_valles_marineris_enhanced.tif_thumb.png}}" alt="Hemisphere">
-    <h3>Valles Marineris Hemisphere Enhanced.</h3>
 
+    <ul style="list-style: none;">
+       {% for mars in mars %}
+        <li{}: {{mars.title}}: {{mars.news_p}}: {mars.feature_image}: {mars.html_table}: {mars.hemisphere_image_urls}
+        
+      
+`   body>
+<div class="container text-center">
+  <h1 class="jumbotron">Mars Hemisphere</h1>
+  <div>
+    <ul style="list-style: none;">
+      {% for mars in mars %}
+    <div class="card">
+      <div class="card-body">
+      <h4 class="card title"> 
+      (% end of %)
+    </ul>
   </div>
   </div>
 </body>
