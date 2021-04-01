@@ -18,23 +18,32 @@
     </div>
 
     <ul style="list-style: none;">
-       {% for mars in mars %}
-        <li{}: {{mars.title}}: {{mars.news_p}}: {mars.feature_image}: {mars.html_table}: {mars.hemisphere_image_urls}
-        
-      
-`   body>
-<div class="container text-center">
+       
+        <li>{{mars.title}}</li>
+        <li>{{mars.news_p}}</li> 
+        <li>{{mars.feature_image}}</li>
+        <li>{{mars.html_table}}</li>
+    </ul>
+
+  <div class="container text-center">
   <h1 class="jumbotron">Mars Hemisphere</h1>
   <div>
     <ul style="list-style: none;">
-      {% for mars in mars %}
+
+      {% for h in mars %}
     <div class="card">
       <div class="card-body">
       <h4 class="card title"> 
-      (% end of %)
+    </div>
+
+      (% endfor %)
+
+      </div>
     </ul>
   </div>
   </div>
 </body>
 
 </html>
+
+<!-- % endfor % -->

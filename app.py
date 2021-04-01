@@ -25,24 +25,6 @@ db.mars.insert_many([
         }])   
 
 
-
-
-
-# # Use flask_pymongo to set up mongo connection
-# app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_db_app"
-# mongo = PyMongo(app, uri="mongodb://localhost:27017/scrape_app")
-# # mongo = PyMongo(app)
-
-# # Or set inline
-# # mongo = PyMongo(app, uri="mongodb://localhost:27017/craigslist_app")
-
-
-# @app.route("/")
-# def index():
-#     scrape = mongo.db.scrape.find_one()
-#     return render_template("index.html", scrape=scrape)
-
-
 @app.route('/')
 def index():
     mars = list(db.mars.find())
