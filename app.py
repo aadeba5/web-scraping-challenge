@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect
 from flask_pymongo import pymongo
-# import scrape_mars
-# import index.html
+import scrape_mars
+
 
 
 app = Flask(__name__)
@@ -11,19 +11,6 @@ client = pymongo.MongoClient(conn)
 
 db = client.mars_db
 
-db.mars.drop()
-
-db.mars.insert_many([
-        {   'title': 'news_title_text',
-            'news_p': 'news_p.text'},   
-            
-        {   'feature_image': 'feature_image'},
-            
-        {   'html_table': 'html_table'},   
-            
-        {   'hemisphere_image_urls': 'hemisphere_image_urls'
-        }])   
-
 
 @app.route('/')
 def index():
@@ -32,10 +19,12 @@ def index():
 
     return render_template('index.html', mars=mars)
 
-    # scrape = mongo.db.scrape
-    # scrape_data = mars_mission.scrape()
-    # scrape.update({}, scrape_data, upsert=True)
-    # return redirect("/", code=302)
+@app.route('/scrape')
+def scrape():
+    scrape = db.mars
+    scrape_data = scrape_mars.scrape()
+    scrape.update({}, scrape_data, upsert=True)
+    return redirect("/", code=302)
 
 
 if __name__ == "__main__":
